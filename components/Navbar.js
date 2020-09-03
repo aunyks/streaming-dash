@@ -12,7 +12,11 @@ const NavLink = ({ href, children }) => (
 export default function Navbar() {
   const [isOpen, setNavbarOpen] = useState(false)
   const [cartLen, setCartLen] = useState(null)
+  const [boltColor, setBoltColor] = useState('black')
   useEffect(() => {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setBoltColor('white')
+    }
     const smallScreenW = 640
     const mediumScreenW = 768
     const largeScreenW = 1024
@@ -25,8 +29,8 @@ export default function Navbar() {
       style={{ boxShadow: '0px 0px 2px #000' }}
       className="z-50 bg-white top-0 inset-x-0 fixed flex items-center justify-between flex-wrap px-3 py-3 lg:px-5">
       <div className="flex items-center flex-shrink-0 mr-6">
-        <a href="/" style={{ textColor: 'black' }} className="text-xl font-semibold tracking-tight no-underline">
-          aunyks
+        <a href="/" className="w-6">
+          <img className="m-0" src={`/img/bolt-${boltColor}.png`} />
         </a>
       </div>
       <div className="block lg:hidden">
