@@ -1,0 +1,196 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
+
+/*
+white: #fff;
+black: #000;
+yellow: #fab700;
+indigo: #5d44f8;
+*/
+
+*::selection {
+ background: #ffdd81;
+}
+
+* {
+  font-size: 1.125rem;
+}
+
+ul li {
+  list-style: circle inside !important;
+}
+
+.text-xs {
+  font-size: .875rem;
+}
+
+.text-sm {
+  font-size: 1rem;
+}
+
+.text-base {
+  font-size: 1.125rem;
+}
+
+.text-lg {
+  font-size: 1.25rem;
+}
+
+.text-xl {
+  font-size: 1.5rem;
+}
+
+.text-2xl {
+  font-size: 1.875rem;
+}
+
+.text-3xl {
+  font-size: 2.25rem;
+}
+
+.text-4xl {
+  font-size: 3rem;
+}
+
+.text-5xl {
+  font-size: 4rem;
+}
+
+.text-6xl {
+  font-size: 5rem;
+}
+
+a {
+  color: black;
+  text-decoration: underline;
+  text-decoration-color: #fab700;
+}
+
+p {
+  line-height: 1.25em;
+  margin: 0.25em 0 1em 0;
+}
+
+h1 {
+  letter-spacing: -1px;
+}
+
+h1, h2, h3, h4 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+h4 {
+  font-size: 1.125em;
+}
+
+h4, h5, h6 {
+  margin: -10px 0;
+}
+
+#navbar {
+  background: white;
+  box-shadow: 0px 0px 2px #000;
+}
+
+#navbar a {
+  color: black;
+}
+
+img {
+  margin: 20px auto;
+  display: block;
+}
+
+.hint {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: #fab700;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 375px) {
+
+  /*
+    iPhone X, 6, 7, 8
+  */
+
+  h1 {
+    font-size: 1.75em;
+  }
+
+  h2 {
+    font-size: 1.25em;
+  }
+
+}
+
+@media only screen and (max-width: 320px) {
+
+  /*
+    iPhone 5
+  */
+
+  #logo {
+    font-size: 1em;
+  }
+
+  .navbar-right {
+    font-size: 0.75em;
+  }
+
+  #header > h1 {
+    margin-left: 0;
+  }
+}
+
+.links-page #logo {
+  font-size: 3em;
+}
+
+@media (prefers-color-scheme: dark) {
+
+  *::selection {
+    background: #5d44f8;
+   }
+
+  html, body {
+    background-color: #222;
+    color: white;
+  }
+
+  path {
+    fill: white;
+  }
+
+  img {
+    filter: grayscale(20%);
+  }
+
+  a {
+    color: white;
+  }
+
+  #navbar {
+    background: #222;
+    box-shadow: 0px 0px 2px #fff;
+  }
+
+  #navbar a {
+    color: white;
+  }
+}
