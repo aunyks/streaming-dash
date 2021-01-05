@@ -2,6 +2,7 @@ import {
   useState,
   useEffect
 } from 'react'
+import useDarkMode from 'hooks/use-dark-mode'
 
 const NavLink = ({ href, children }) => (
   <a href={href} className="text-base no-underline block mt-4 lg:inline-block lg:mt-0 mr-4">
@@ -11,11 +12,23 @@ const NavLink = ({ href, children }) => (
 
 export default function Navbar() {
   const [isOpen, setNavbarOpen] = useState(false)
-  const [cartLen, setCartLen] = useState(null)
   const [boltColor, setBoltColor] = useState('black')
+
   useEffect(() => {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       setBoltColor('white')
+    }
+    const onDarkModeChange = ({ matches }) => {
+      setBoltColor(matches ? 'white' : 'black')
+    }
+    setBoltColor(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'white' : 'black')
+
+    try {
+      // For Chrome / FireFox
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', onDarkModeChange)
+    } catch (e) {
+      // For Safari
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(onDarkModeChange)
     }
     const smallScreenW = 640
     const mediumScreenW = 768
