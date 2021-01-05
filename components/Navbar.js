@@ -2,7 +2,6 @@ import {
   useState,
   useEffect
 } from 'react'
-import useDarkMode from 'hooks/use-dark-mode'
 
 const NavLink = ({ href, children }) => (
   <a href={href} className="text-base no-underline block mt-4 lg:inline-block lg:mt-0 mr-4">
